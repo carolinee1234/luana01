@@ -1,0 +1,7 @@
+URL da API:
+
+https://newsapi.org/v2/everything?apiKey=${this.apiKey}&source=google-news-br&language=pt&q=${this.apiQuery}
+
+API Key gentilmente cedida pela Nathalia:
+
+f6b1d5dc3f4c47c483446e353984603f

@@ -6,10 +6,27 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
 
-    <ion-title>Notícias</ion-title>
+    <ion-title class="ion-text-center">Notícias</ion-title>
+
+    <!-- Logotipo -->
+    <ion-img class="page-logo" slot="end" src="assets/logo01.png"></ion-img>
+
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding-horizontal">
+<ion-content class="ion-padding-horizontal" *ngIf="newsList">
+
+  <div *ngFor="let item of newsList">
+
+    <ion-card class="ion-no-margin ion-margin-vertical" (click)="newsOpen(item.url)">
+      <ion-img src="{{ item.urlToImage }}"></ion-img>
+      <ion-card-header>
+        <ion-card-subtitle>{{ item.source.name }}</ion-card-subtitle>
+        <ion-card-title>{{ item.title }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content [innerHTML]="item.description"></ion-card-content>
+    </ion-card>
+
+  </div>
 
 </ion-content>

@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+
+    <!-- Mostra o botão do menu principal -->
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center">Entrar / Login</ion-title>
+
+    <!-- Logotipo -->
+    <ion-img class="page-logo" slot="end" src="assets/logo01.png"></ion-img>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding-horizontal">
+
+  <p>Você precisa estar logada(o) para ter acesso ao conteúdo exclusivo.</p>
+  <p>Logue-se clicando no botão abaixo.</p>
+
+<ion-button expand="block" (click)="login()">
+  <ion-icon name="logo-google" slot="start"></ion-icon>
+  Logue-se com o Google
+</ion-button>
+
+</ion-content>
