@@ -1,6 +1,13 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+// Importar Firebase Guards
+import { AngularFireAuthGuard, redirectUnauthorizedTo, redirectLoggedInTo } from '@angular/fire/auth-guard';
+
+// Define redirecionadores
+const toLogin = () => redirectUnauthorizedTo(['/login']); // Usuário  não logado
+const isLogged = () => redirectLoggedInTo(['/home']);     // Usuário logado
+
 const routes: Routes = [
   // Define a página incial
   {
@@ -37,6 +44,9 @@ const routes: Routes = [
   {
     path: 'view/:id',
     loadChildren: () => import('./pages/view/view.module').then((m) => m.ViewPageModule),
+
+    // Somente para usuários logados
+    canActivate: [AngularFireAuthGuard], data: { authGuardPipe: toLogin }
   },
 
   // Página de visualização do sobre
@@ -48,19 +58,28 @@ const routes: Routes = [
   // Login de usuário
   {
     path: 'login',
-    loadChildren: () => import('./user/login/login.module').then(m => m.LoginPageModule)
+    loadChildren: () => import('./user/login/login.module').then(m => m.LoginPageModule),
+
+    // Somente se não está logado
+    canActivate: [AngularFireAuthGuard], data: { authGuardPipe: isLogged }
   },
 
   // Logout de usuário
   {
     path: 'logout',
-    loadChildren: () => import('./user/logout/logout.module').then(m => m.LogoutPageModule)
+    loadChildren: () => import('./user/logout/logout.module').then(m => m.LogoutPageModule),
+
+    // Somente para usuários logados
+    canActivate: [AngularFireAuthGuard], data: { authGuardPipe: toLogin }
   },
 
   // Ver perfil do usuário
   {
     path: 'profile',
-    loadChildren: () => import('./user/profile/profile.module').then(m => m.ProfilePageModule)
+    loadChildren: () => import('./user/profile/profile.module').then(m => m.ProfilePageModule),
+
+    // Somente para usuários logados
+    canActivate: [AngularFireAuthGuard], data: { authGuardPipe: toLogin }
   },
 
   // Página exibida quando a rota está errada

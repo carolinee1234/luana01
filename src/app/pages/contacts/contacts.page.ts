@@ -11,6 +11,9 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { DatePipe } from '@angular/common';
 import { AlertController } from '@ionic/angular';
 
+// Importa Autenticador
+import { AngularFireAuth } from '@angular/fire/auth';
+
 // Validação (filtro) personalizado
 // Não permite compos somente com espaços
 export function removeSpaces(control: AbstractControl) {
@@ -36,13 +39,26 @@ export class ContactsPage implements OnInit {
     // Injeta dependências
     public form: FormBuilder,
     public afs: AngularFirestore,
-    public alert: AlertController
+    public alert: AlertController,
+    public auth: AngularFireAuth
   ) { }
 
   ngOnInit() {
 
     // Cria os campos do formulário
     this.contactFormCreate();
+
+    // Preenche nome e email se usuário está logado
+    if (this.contactForm) {
+      this.auth.onAuthStateChanged(
+        (userData) => {
+          if(userData) {
+            this.contactForm.controls.name.setValue(userData.displayName.trim());
+            this.contactForm.controls.email.setValue(userData.email.trim());
+          }
+        }
+      );
+    }
   }
 
   // Cria os campos do formulário
