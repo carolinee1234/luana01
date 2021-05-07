@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
+// Importa dependências
 import { AngularFireAuth } from '@angular/fire/auth';
 import firebase from 'firebase/app';
-
 
 @Component({
   selector: 'app-root',
@@ -10,10 +10,11 @@ import firebase from 'firebase/app';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  
-  constructor() {}
 
-  public auth: AngularFireAuth
+  constructor(
 
+    // Injeta dependências
+    public auth: AngularFireAuth
+  ) {}
 
 }

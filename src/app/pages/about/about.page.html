@@ -14,6 +14,18 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding-horizontal">
+<ion-content class="ion-padding-horizontal" *ngIf="items">
+
+  <p>Obtenha mais informações sobre este aplicativo.</p>
+
+  <div *ngFor="let item of items | async">
+
+    <ion-card class="ion-no-margin ion-margin-vertical" routerLink="/aboutview/{{ item.id }}">
+      <ion-card-header>
+        <ion-card-title>{{ item.title }}</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+
+  </div>
 
 </ion-content>

@@ -17,9 +17,11 @@
 <script>
 
     db.collection('about').add({
-      date: '2020-11-23 12:44:32',
+      date: '2021-05-05 18:00:00',
       title: 'Sobre o Aplicativo',
+      intro: 'O que é e para que serve...',
       text: '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione molestias sunt perspiciatis esse illo ut, sint corrupti tenetur, omnis autem odio. Debitis quos neque dolores architecto beatae rem dignissimos nisi?</p> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, cum. Dolorum veritatis aliquam porro labore aliquid fugiat ipsa minima ab maxime provident quae eum excepturi obcaecati ipsam itaque, ut fugit?</p> <figure> <img src="https://picsum.photos/400/300" alt="Lorem Image"> <figcaption>Lorem Image</figcaption> </figure> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus sed maiores excepturi quis, necessitatibus porro ullam, eius soluta debitis maxime corrupti. Nam delectus asperiores quaerat quia aspernatur est cumque saepe?</p> <h4>Links:</h4> <ul> <li><a href="http://luferat.net/">Site do Fessô</a></li> <li><a href="https://www.youtube.com/channel/UCkN6I-gfJlL5lUj9shkyxPQ">Youtube do Fessô</a></li> <li><a href="https://github.com/Luferat/">GitHub do Fessô</a></li> </ul> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque doloribus adipisci laudantium placeat porro, error deleniti quasi eligendi reiciendis ea perferendis fugit minus impedit deserunt illum officia laboriosam consequuntur quisquam.</p> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque fuga ad tempora harum quo sequi animi?</p>',
+      icon: 'apps',
       status: 'ativo'
     })
     .then(function (docRef) {
@@ -27,9 +29,11 @@
     });
 
     db.collection('about').add({
-      date: '2020-11-23 12:44:33',
+      date: '2021-05-05 17:00:00',
       title: 'Sobre o Autor',
+      intro: 'Quem fez este aplicativo...',
       text: '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione molestias sunt perspiciatis esse illo ut, sint corrupti tenetur, omnis autem odio. Debitis quos neque dolores architecto beatae rem dignissimos nisi?</p> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, cum. Dolorum veritatis aliquam porro labore aliquid fugiat ipsa minima ab maxime provident quae eum excepturi obcaecati ipsam itaque, ut fugit?</p> <figure> <img src="https://picsum.photos/400/300" alt="Lorem Image"> <figcaption>Lorem Image</figcaption> </figure> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus sed maiores excepturi quis, necessitatibus porro ullam, eius soluta debitis maxime corrupti. Nam delectus asperiores quaerat quia aspernatur est cumque saepe?</p> <h4>Links:</h4> <ul> <li><a href="http://luferat.net/">Site do Fessô</a></li> <li><a href="https://www.youtube.com/channel/UCkN6I-gfJlL5lUj9shkyxPQ">Youtube do Fessô</a></li> <li><a href="https://github.com/Luferat/">GitHub do Fessô</a></li> </ul> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque doloribus adipisci laudantium placeat porro, error deleniti quasi eligendi reiciendis ea perferendis fugit minus impedit deserunt illum officia laboriosam consequuntur quisquam.</p> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque fuga ad tempora harum quo sequi animi?</p>',
+      icon: 'person',
       status: 'ativo'
     })
     .then(function (docRef) {
@@ -37,9 +41,23 @@
     });
 
     db.collection('about').add({
-      date: '2020-11-23 12:44:34',
-      title: 'Políticas de Privacidade',
+      date: '2021-05-05 16:00:00',
+      title: 'Sobre Cookies',
+      intro: 'O que são e para que servem...',
       text: '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione molestias sunt perspiciatis esse illo ut, sint corrupti tenetur, omnis autem odio. Debitis quos neque dolores architecto beatae rem dignissimos nisi?</p> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, cum. Dolorum veritatis aliquam porro labore aliquid fugiat ipsa minima ab maxime provident quae eum excepturi obcaecati ipsam itaque, ut fugit?</p> <figure> <img src="https://picsum.photos/400/300" alt="Lorem Image"> <figcaption>Lorem Image</figcaption> </figure> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus sed maiores excepturi quis, necessitatibus porro ullam, eius soluta debitis maxime corrupti. Nam delectus asperiores quaerat quia aspernatur est cumque saepe?</p> <h4>Links:</h4> <ul> <li><a href="http://luferat.net/">Site do Fessô</a></li> <li><a href="https://www.youtube.com/channel/UCkN6I-gfJlL5lUj9shkyxPQ">Youtube do Fessô</a></li> <li><a href="https://github.com/Luferat/">GitHub do Fessô</a></li> </ul> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque doloribus adipisci laudantium placeat porro, error deleniti quasi eligendi reiciendis ea perferendis fugit minus impedit deserunt illum officia laboriosam consequuntur quisquam.</p> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque fuga ad tempora harum quo sequi animi?</p>',
+      icon: 'document-lock',
+      status: 'ativo'
+    })
+    .then(function (docRef) {
+      console.log("Document written with ID: ", docRef.id);
+    });
+
+    db.collection('about').add({
+      date: '2021-05-05 15:00:00',
+      title: 'Sua Privacidade',
+      intro: 'Como cuidamos de seus dados...',
+      text: '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione molestias sunt perspiciatis esse illo ut, sint corrupti tenetur, omnis autem odio. Debitis quos neque dolores architecto beatae rem dignissimos nisi?</p> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, cum. Dolorum veritatis aliquam porro labore aliquid fugiat ipsa minima ab maxime provident quae eum excepturi obcaecati ipsam itaque, ut fugit?</p> <figure> <img src="https://picsum.photos/400/300" alt="Lorem Image"> <figcaption>Lorem Image</figcaption> </figure> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus sed maiores excepturi quis, necessitatibus porro ullam, eius soluta debitis maxime corrupti. Nam delectus asperiores quaerat quia aspernatur est cumque saepe?</p> <h4>Links:</h4> <ul> <li><a href="http://luferat.net/">Site do Fessô</a></li> <li><a href="https://www.youtube.com/channel/UCkN6I-gfJlL5lUj9shkyxPQ">Youtube do Fessô</a></li> <li><a href="https://github.com/Luferat/">GitHub do Fessô</a></li> </ul> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque doloribus adipisci laudantium placeat porro, error deleniti quasi eligendi reiciendis ea perferendis fugit minus impedit deserunt illum officia laboriosam consequuntur quisquam.</p> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque fuga ad tempora harum quo sequi animi?</p>',
+      icon: 'lock-closed',
       status: 'ativo'
     })
     .then(function (docRef) {
