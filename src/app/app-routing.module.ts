@@ -82,11 +82,24 @@ const routes: Routes = [
     canActivate: [AngularFireAuthGuard], data: { authGuardPipe: toLogin }
   },
 
+  // Slides de fotos
+  {
+    path: 'photos',
+    loadChildren: () => import('./pages/photos/photos.module').then( m => m.PhotosPageModule),
+
+    // Somente para usuários logados
+    canActivate: [AngularFireAuthGuard], data: { authGuardPipe: toLogin }
+  },
+
   // Página exibida quando a rota está errada
   // DEVE SER SEMPRE A ÚLTIMA ROTA
   {
     path: '**',
     loadChildren: () => import('./pages/e404/e404.module').then((m) => m.E404PageModule),
+  },
+  {
+    path: 'photos',
+    loadChildren: () => import('./pages/photos/photos.module').then( m => m.PhotosPageModule)
   }
 
 ];
